@@ -1,0 +1,36 @@
+﻿\documentclass[a4j]{jarticle}
+
+\usepackage{graphicx} 
+\usepackage{proc}
+\usepackage{mediabb}
+\hoffset -2mm
+
+\renewcommand{\baselinestretch}{0.83} % 行間
+
+\title{title}
+\author{author}
+\mypage{55} % 学科から指定されるページ番号を入力
+\begin{document}
+\maketitle
+
+\section{はじめに}
+
+\section{section1}
+
+\section{おわりに}
+
+% ------ 参考文献 ------
+\begin{thebibliography}{9}
+\vspace{-1mm}
+\itemsep -1.7pt
+{\footnotesize
+\bibitem{ROS}
+{http://wiki.ros.org/, Open Source Robotics Foundation}
+\bibitem{bib:sample}
+{日本ロボット学会 (編), ロボットテクノロジー, オーム社, 2011}
+}
+
+\end{thebibliography}
+
+\end{document}
+

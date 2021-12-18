@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                       %
+%  情報処理学会全国大会投稿論文用テンプレートファイル   %
+%                   for ips.sty ver2.1                  %
+%                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% ver2.1 +
+%%% edited by Jutori
+%%% modified by Kenta
+
+\documentclass[a4paper,9pt, twocolumn]{jarticle}
+%\documentclass[a4paper,9pt,twocolumn]{ipsjpapers}
+\usepackage{graphicx}
+\usepackage{ips}
+\usepackage{mediabb}
+
+\renewcommand{\baselinestretch}{0.87}   % 行間
+
+\pagestyle{empty}
+%%%%%%    TEXT START    %%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%　ヘッダ　%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[%
+\begin{center}
+
+%--------------------------------------------------------------
+% 講演タイトル（2行にわたるときは\2jtitle{}{}{}）
+%--------------------------------------------------------------
+
+\vspace{-3mm}
+\2jtitle{}{独自ベクトル処理機能を備えたプロセッサ向け}{自動ベクトル化コンパイラの開発}
+
+%--------------------------------------------------------------
+% 日本語著者名
+%--------------------------------------------------------------
+% name{1}{***} : 所属１の氏名
+% name{2}{***} : 所属２の氏名　のようにする．所属の引数は４まで
+% 名前は絶対間違えないように
+
+\begin{authors}
+\name{1}{永池 晃太朗}
+\name{2}{大津 金光}
+\name{2}{横田 隆史}
+\name{2}{小島 駿}
+\end{authors}
+%--------------------------------------------------------------
+% 所属
+%--------------------------------------------------------------
+% aff{1}{***} : 所属１
+% aff{2}{***} : 所属２　のようにする．所属の引数は４まで.
+
+\begin{affiliation}
+\aff{1}{宇都宮大学工学部情報工学科}
+\aff{2}{宇都宮大学大学院地域創生科学研究科}
+\end{affiliation}
+
+%--------------------------------------------------------------
+\end{center}
+]%
+
+%%%%%%%%%%%%%%%%%%%%%%%%　   脚注  　%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------------
+% 英文タイトル
+%--------------------------------------------------------------
+
+\etitle{Development of automatic vectorization compiler for processors with original vector processing function.}
+
+
+%--------------------------------------------------------------
+% 英語語著者名
+%--------------------------------------------------------------
+% ename{1}{***} : 所属１の氏名
+% ename{2}{***} : 所属２の氏名　のようにする．
+
+%\ename{1}{First Last, First Last and First Last}
+%ename{2}を使う場合、所属１の人と２の人で改行されてしまうので、\enameをコメントアウトして以下のように直接書くのをおすすめ (空白は適宜調節のこと)
+\footnotetext{%
+    \hspace{-3mm}\raise1ex\hbox{{\scriptsize \dag}}Nagaike Kotaro,%
+    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \dag\dag}}Ootsu Kanemitsu,%
+    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \dag\dag}}Yokota Takashi,%
+    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \dag\dag}}Kojima Shun,%
+}
+%ただし所属が３の場合は†††でなく‡となるので，\ddagと付けること
+%\footnotetext{%
+%    \hspace{-3mm}\raise1ex\hbox{{\scriptsize \dag}}First Last,%
+%    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \dag}}First Last,%
+%    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \dag\dag}}First Last,%
+%    \hspace{1.5mm}\raise1ex\hbox{{\scriptsize \ddag}}First Last,%
+%}
+%\footnotetext{%
+%    \hspace{-1mm}\raise1ex\hbox{{\scriptsize \dag\dag}}First Last and%
+%    \hspace{1mm}\raise1ex\hbox{{\scriptsize \dag\dag}}First Last%
+%}
+
+
+%--------------------------------------------------------------
+% 英語所属
+%--------------------------------------------------------------
+% eaff{1}{***} : 所属１
+% eaff{2}{***} : 所属２　のようにする．所属の引数は４まで.
+% ※日本語の所属と対応させること．
+\eaff{1}{Department of Information Science, Faculty of Engineering, Utsunomiya University}
+%\eaff{2}{Department of Information Systems Science, Graduate School of Engineering, Utsunomiya University}
+
+
+%--------------------------------------------------------------
+% 英語住所
+%--------------------------------------------------------------
+
+
+
+% 上マージン30mm 下25mm 横20mm 段組の間隔 7mm
+% 印刷した後、自分で確認すること
+
+%%%%%%%%%%%%%%%%%%%%%%%%　ここから本文　%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{はじめに}
+%\input{intro}       % 同一ディレクトリのintro.texが読み込まれる
+我々は機械語コードの変更なしに同時並列演算数を変更することができる,データ並列処理のためのスケーラブルなベクトル拡張を実現したベクトル拡張付きRISC-Vを提案している[1].
+
+我々のベクトル拡張付きRISC-Vは,ARMのベクトル拡張であるARM SVE[2]を参考に組込み向けにRISC-V[3]をベクトル拡張したものである.
+これにより,機械語コードが同時演算数に依存しないスケーラブルなベクトル拡張を実現したが,ベクトル拡張に対応したコンパイラがない.
+
+この問題に対して,解決策として既存のRISC-Vコンパイラに変更を加えることによって,我々のシステム向けのベクトル化アセンブリコードを得ることのできるコンパイラを開発するという手段を考えた.
+
+コンパイラの開発はコンパイラ基盤であるLLVM[4]を用いて行う.コンパイラ基盤はコンパイラの機能がモジュール化されており,既存機能の再利用が可能になっている.そのため,コンパイラの開発の際にコンパイラ基盤を用いることによって独自部分のみの開発で済む.
+前述した通りベクトル拡張付きRISC-VはRISC-Vを拡張したものであることから,LLVMのRISC-Vコンパイラとしての機能を再利用してコンパイラの開発を行う.
+
+
+\section{ベクトル拡張付きRISC-V}
+
+
+\section{LLVM}
+
+\section{LLVMバックエンドにおける独自命令の生成機能の実装}
+
+\renewcommand{\baselinestretch}{0.83}\selectfont
+\subsection*{\small 謝辞}
+\vspace{-0.5mm}
+{\small 本研究は，一部日本学術振興会科学研究費補助金(基盤研
+究(C)24500055，同(C)15K00068) の援助による．}
+% 科研費IDや重点はその年によって記述が変わるのでよく確認すること
+% 2015年時
+% 調べ方：「 科研費　教授名」でぐぐる-> 研究課題番号
+
+
+%
+% ------ 参考文献 ------
+%
+\begin{thebibliography}{9}
+\itemsep -1.7pt
+
+\bibitem{bib:sample}
+{\small 氏名，氏名，氏名:      % 丁寧
+%{\small 氏名ほか:             % スペースが足りない場合
+\newblock ``タイトル'',
+\newblock 情報処理学会論文誌:コンピューティングシステム,
+\newblock Vol.X,
+\newblock No.SIG X,
+\newblock pp.X-Y,
+\newblock 20XX.}
+
+\end{thebibliography}
+
+\end{document}
+
