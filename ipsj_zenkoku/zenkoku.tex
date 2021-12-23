@@ -122,7 +122,7 @@
 我々は機械語コードの変更なしに同時並列演算数を変更することができる，データ並列処理のためのスケーラブルなベクトル処理機能を備えたベクトル拡張付きRISC-Vを提案している\cite{bib:kimura}．
 
 我々のベクトル拡張付きRISC-Vは，ARMのベクトル拡張であるARM SVE\cite{bib:arm_sve}を参考に組込み向けにRISC-V\cite{bib:risc-v}をベクトル拡張したものである．
-これにより，機械語コードが同時演算数に依存しないスケーラブルなベクトル拡張を実現したが，ベクトル拡張に対応したコンパイラがない．アセンブリコードを生成はARM SVEのコンパイラによるAR SVEアセンブリコードを変換するといった手法を取っており，規模の大きいプログラム等の場合，アセンブリコードを得ることは容易ではない．
+これにより，機械語コードが同時演算数に依存しないスケーラブルなベクトル拡張を実現したが，ベクトル拡張に対応したコンパイラがない．アセンブリコードを生成はARM SVEのコンパイラによるARM SVEアセンブリコードを変換するといった手法を取っており，規模の大きいプログラム等の場合，アセンブリコードを得ることは容易ではない．
 
 この問題に対して，解決策として既存のRISC-Vコンパイラに変更を加えることによって，ベクトル拡張付きRISC-Vアセンブリコードを得ることのできるコンパイラを開発するという手段を考えた．
 
@@ -148,7 +148,7 @@
 \section{LLVMコンパイラ基盤}
 LLVMはC言語などのソースコードから中間表現であるLLVM IRに変換を行うフロントエンド，アセンブリコード生成を行うバックエンドからなる．本研究では独自命令生成のためにバックエンドに対して変更を加える．
 
-\begin{figure}[H]
+\begin{figure}[t]
     \begin{center}
         \includegraphics[scale=0.3]{backend.eps}
     \end{center}
@@ -171,7 +171,7 @@ LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベ�
 
 \section{LLVMバックエンドにおける独自命令の生成機能の実装}
 
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
         \includegraphics[scale=0.35]{RVInstVVMIQS.eps}
     \caption{命令フォーマットの定義}
@@ -180,7 +180,7 @@ LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベ�
 
 ベクトル拡張付きRISC-V命令の定義のために，図2のようなクラスを定義した．クラスRVInstVVMIQSは2つのベクトル要素を入力に持ち，ベクトル要素を出力する命令の命令フォーマットである．各命令フォーマットは32bitの命令フィールドを定義している基本クラスRVInstを継承する形で命令によって異なるフォーマットを定義する．
 
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
         \includegraphics[scale=0.35]{Instruction.eps}
     \caption{命令の定義}
@@ -216,7 +216,7 @@ LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベ�
 \bibitem{bib:kimura}
 {\small Yoshiki Kimura,et al:      % 丁寧
 %{\small 氏名ほか:             % スペースが足りない場合
-\newblock ``Proposal of Scalable Vector Instruc-tion Set for Embedded RISC-V Processor,'',
+\newblock ``Proposal of Scalable Vector Instruc-tion Set for Embedded RISC-V Processor,''
 \newblock Proc. 2019 Seventh International Symposium on Computing and Networking Workshops (CANDARW),
 \newblock Vol.1,
 \newblock pp.435-439,
@@ -225,7 +225,7 @@ LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベ�
 \bibitem{bib:arm_sve}
 {\small Nigel Stephens, et al:      % 丁寧
 %{\small 氏名ほか:             % スペースが足りない場合
-\newblock ``The ARM Scalable Vector Extension,'',
+\newblock ``The ARM Scalable Vector Extension,''
 \newblock IEEE Micro,
 \newblock Vol.37,
 \newblock No.2,
@@ -235,13 +235,13 @@ LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベ�
 \bibitem{bib:risc-v}
 {\small Andrew Waterman, Krste Asanovi:      % 丁寧
 %{\small 氏名ほか:             % スペースが足りない場合
-\newblock ``The RISC-V Instruction Set Manual Volume I: Unprivileged ISA,Document Version 2.2'',
+\newblock ``The RISC-V Instruction Set Manual Volume I: Unprivileged ISA,Document Version 2.2,''
 \newblock 2017.}
 
 \bibitem{bib:llvm}
 {\small Chris Lattner, Vikram Adve:      % 丁寧
 %{\small 氏名ほか:             % スペースが足りない場合
-\newblock ``LLVM: A Compilation Frame-work for Lifelong Program Analysis Transformation,'',
+\newblock ``LLVM: A Compilation Frame-work for Lifelong Program Analysis Transformation,''
 \newblock Proc. 2004 International Symposium on Code Generation and Optimization (CGO’04),
 \newblock pp.75,
 \newblock 2004.}
