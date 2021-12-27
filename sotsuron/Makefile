@@ -1,10 +1,10 @@
-TARGET	= syuron
+TARGET	= sotsuron_nagaike
 TEX	= tex/*.tex
 IMAGE	= image/*.pdf
 
-syuron.pdf: syuron.dvi
+sotsuron_nagaike.pdf: sotsuron_nagaike.dvi
 	dvipdfmx $(TARGET).dvi
 
-syuron.dvi: syuron.tex $(TEX) $(IMAGE)
+sotsuron_nagaike.dvi: sotsuron_nagaike.tex $(TEX) $(IMAGE)
 	platex -interaction=batchmode $(TARGET).tex
 	platex -interaction=batchmode $(TARGET).tex

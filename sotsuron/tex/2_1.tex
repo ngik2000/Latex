@@ -1,13 +1,8 @@
 %2.1.tex
-ここは\ref{chp:2_1}節です
 
-図の挿入方法サンプル
-lena画像を図\ref{fig:sample}に示す．
+RISC-Vはカルフォルニア大学バークレイ校が新たに開発したRISCの設計思想に基づく命令セットアーキテクチャ(ISA)である．RISC-VはオープンなISAであり，ライセンスが不要である．
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=7.5cm]{image/lena.pdf}
-\caption{lenaさん}
-\label{fig:sample}
-\end{center}
-\end{figure}
+従来のISAでは，後方バイナリ互換性を維持するために過去に拡張した命令すべてを実装する必要がある．しかし，このようなISAでは命令数が増加し複雑になる．そこでRISC-Vではモジュール式ISAを採用している．%参考文献入れる
+RISC-Vのシステムの機能を独立したモジュールとして分け，アプリケーションに応じて拡張機能を組み込むかを選択できる．RISC-Vには必ず組み込まなければならない基本命令セット(RV32I)の他に，主な拡張機能として乗算及び除算(RV32M)，単精度浮動小数点(RV32F)，倍精度浮動小数点(RV32D)等がある．
+
+%RISC-Vの命令フォーマットの話をする
