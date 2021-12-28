@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  27 DEC 2021 18:11
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  28 DEC 2021 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -342,42 +342,41 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
- (./tex/2_1.tex
+ (./tex/2_1.tex) (./tex/2_3.tex [3
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 7.
-
-File: image/lena.pdf Graphic file (type pdf)
-<image/lena.pdf>) (./tex/2_3.tex) (./tex/2_3.tex) [3
-
-]
+]) (./tex/2_3.tex) [4] [5]
 第 3.
-[4] (./tex/3.tex) (./tex/3_1.tex) (./tex/3_2.tex) [5
+(./tex/3.tex) (./tex/3_1.tex) (./tex/3_2.tex) [6
 
 ]
 第 4.
-(./tex/4.tex) (./tex/4_1.tex) (./tex/4_2.tex) [6
+(./tex/4.tex) (./tex/4_1.tex) (./tex/4_2.tex) [7
 
 ]
 第 5.
-(./tex/5.tex) (./tex/5_1.tex) (./tex/5_2.tex) [7
+(./tex/5.tex) (./tex/5_1.tex) (./tex/5_2.tex) [8
 
 ]
 第 6.
-(./tex/outro.tex) [8
+(./tex/outro.tex) [9
 
-] [9] (./tex/bibliography.tex) [10] (./sotsuron_nagaike.aux)
+] [10] (./tex/bibliography.tex
+Underfull \hbox (badness 1052) in paragraph at lines 35--39
+[]\OT1/txr/m/n/10 Andrew Wa-ter-man, Krste Asanovi:  ``The RISC-V In-struc-tion Set Man-ual Vol-ume I: Un-priv-i-leged
+ []
+
+) [11] (./sotsuron_nagaike.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3529 strings out of 493640
- 44695 string characters out of 6150528
- 106373 words of memory out of 5000000
- 7027 multiletter control sequences out of 15000+600000
+ 3528 strings out of 493640
+ 44706 string characters out of 6150528
+ 106378 words of memory out of 5000000
+ 7029 multiletter control sequences out of 15000+600000
  30641 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,7n,42p,1319b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,7n,42p,645b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike.dvi (14 pages, 17404 bytes).
+Output written on sotsuron_nagaike.dvi (15 pages, 28228 bytes).
