@@ -2,8 +2,16 @@
 MIQS(MIPS Instruction processor with Quadword SIMD extension)\cite{bib:hiraishi}
 とは，既存のMIPS命令互換プロセッサを元にSIMD演算機能とオンチップメモリを備えたソフトコアプロセッサのことであったが，現在はRISC-Vコアにベクトル演算機能をもたせたソフトコアプロセッサとなっており，特にSIMD拡張を行っているわけではないが名称を引き継ぎMIQSと呼称する．
 
-図%図番号を入れる
+図\ref{fig:MIQS_system}
 にMIQSの全体構成を示す．MIQSのRISC-Vコアプロセッサは既存のRISC-Vプロセッサを使用している．このプロセッサはVerilog-HDLで記述された5段パイプラインプロセッサで回路の複雑化，規模増加を避けるために必要最低限の基本命令セットであるRV32Iに対応している．ベクトル処理ユニットはRISC-V向けのベクトル命令セットに対応している．これによって機械語コードを同時演算数の変更によって作りなおす必要のないスケーラブルなベクトル拡張が実現できた．
+
+\begin{figure}[tb]
+\begin{center}
+    \includegraphics[scale=1.0]{image/MIQS_system.pdf}
+    \caption{MIQSの構成}
+    \label{fig:MIQS_system}
+\end{center}
+\end{figure}
 
 命令のフェッチ，デコードはRISC-Vコアプロセッサ上で行い，デコード結果がベクトル拡張命令であったときはベクトル処理ユニットで動作させる．
 
