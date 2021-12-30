@@ -5,7 +5,7 @@ MIQS(MIPS Instruction processor with Quadword SIMD extension)\cite{bib:hiraishi}
 図\ref{fig:MIQS_system}
 にMIQSの全体構成を示す．MIQSのRISC-Vコアプロセッサは既存のRISC-Vプロセッサを使用している．このプロセッサはVerilog-HDLで記述された5段パイプラインプロセッサで回路の複雑化，規模増加を避けるために必要最低限の基本命令セットであるRV32Iに対応している．ベクトル処理ユニットはRISC-V向けのベクトル命令セットに対応している．これによって機械語コードを同時演算数の変更によって作りなおす必要のないスケーラブルなベクトル拡張が実現できた．
 
-\begin{figure}[tb]
+\begin{figure}[b]
 \begin{center}
     \includegraphics[scale=1.0]{image/MIQS_system.pdf}
     \caption{MIQSの構成}
