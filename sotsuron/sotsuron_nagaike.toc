@@ -11,10 +11,10 @@
 \contentsline {section}{\numberline {3.2}LLVMによる自動ベクトル化機能}{8}
 \contentsline {chapter}{\numberline {4}ベクトル拡張付きRISC-Vコンパイラ}{9}
 \contentsline {section}{\numberline {4.1}LLVMバックエンドにおける独自命令実装手法}{9}
-\contentsline {section}{\numberline {4.2}ベクトル拡張付きRISC-V命令の定義}{9}
-\contentsline {chapter}{\numberline {5}評価と考察}{10}
-\contentsline {section}{\numberline {5.1}生成されるアセンブリコードの評価}{10}
-\contentsline {section}{\numberline {5.2}非対応命令についての考察}{10}
-\contentsline {chapter}{\numberline {6}おわりに}{11}
-\contentsline {chapter}{謝 辞}{12}
-\contentsline {chapter}{参 考 文 献}{13}
+\contentsline {section}{\numberline {4.2}ベクトル拡張付きRISC-V命令の定義}{10}
+\contentsline {chapter}{\numberline {5}評価と考察}{12}
+\contentsline {section}{\numberline {5.1}生成されるアセンブリコードの評価}{12}
+\contentsline {section}{\numberline {5.2}非対応命令についての考察}{12}
+\contentsline {chapter}{\numberline {6}おわりに}{13}
+\contentsline {chapter}{謝 辞}{14}
+\contentsline {chapter}{参 考 文 献}{15}
