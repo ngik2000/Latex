@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  2 JAN 2022 17:42
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  3 JAN 2022 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -355,14 +355,11 @@ File: image/Auto_vectorize.pdf Graphic file (type pdf)
 第 4.
 (./tex/4.tex) (./tex/4_1.tex
 File: image/SelectionDAG_example.pdf Graphic file (type pdf)
- <image/SelectionDAG_example.pdf>
+ <image/SelectionDAG_example.pdf> [9
 
-LaTeX Warning: Reference `InstFromat_class' on page 9 undefined on input line 23.
-
+]
 File: image/InstFormat_class.pdf Graphic file (type pdf)
-<image/InstFormat_class.pdf>) (./tex/4_2.tex) [9
-
-] [10]
+ <image/InstFormat_class.pdf>) (./tex/4_2.tex) [10]
 第 5.
 [11] (./tex/5.tex) (./tex/5_1.tex) (./tex/5_2.tex) [12
 
@@ -375,11 +372,7 @@ Underfull \hbox (badness 1052) in paragraph at lines 35--39
 []\OT1/txr/m/n/10 Andrew Wa-ter-man, Krste Asanovi:  ``The RISC-V In-struc-tion Set Man-ual Vol-ume I: Un-priv-i-leged
  []
 
-) [15] (./sotsuron_nagaike.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) [15] (./sotsuron_nagaike.aux) ) 
 Here is how much of TeX's memory you used:
  3553 strings out of 493640
  45154 string characters out of 6150528
@@ -389,4 +382,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  27i,7n,42p,1597b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike.dvi (19 pages, 43776 bytes).
+Output written on sotsuron_nagaike.dvi (19 pages, 44300 bytes).
