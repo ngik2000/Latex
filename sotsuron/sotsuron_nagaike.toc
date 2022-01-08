@@ -15,6 +15,6 @@
 \contentsline {chapter}{\numberline {5}評価と考察}{14}
 \contentsline {section}{\numberline {5.1}生成されるアセンブリコードの評価}{14}
 \contentsline {section}{\numberline {5.2}非対応命令についての考察}{14}
-\contentsline {chapter}{\numberline {6}おわりに}{15}
-\contentsline {chapter}{謝 辞}{16}
-\contentsline {chapter}{参 考 文 献}{17}
+\contentsline {chapter}{\numberline {6}おわりに}{16}
+\contentsline {chapter}{謝 辞}{17}
+\contentsline {chapter}{参 考 文 献}{18}

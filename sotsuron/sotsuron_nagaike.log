@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  7 JAN 2022 18:26
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  8 JAN 2022 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -375,25 +375,29 @@ File: image/RVInstVVMIQS_v2.pdf Graphic file (type pdf)
 File: image/Instruction_define.pdf Graphic file (type pdf)
  <image/Instruction_define.pdf>) [12]
 第 5.
-[13] (./tex/5.tex) (./tex/5_1.tex) (./tex/5_2.tex) [14
+[13] (./tex/5.tex) (./tex/5_1.tex
+File: image/add_array_c.pdf Graphic file (type pdf)
+ <image/add_array_c.pdf>
+File: image/rv_vectorized_assembly.pdf Graphic file (type pdf)
+ <image/rv_vectorized_assembly.pdf>) (./tex/5_2.tex) [14
 
-]
+] [15]
 第 6.
-(./tex/outro.tex) [15
+(./tex/outro.tex) [16
 
-] [16] (./tex/bibliography.tex
+] [17] (./tex/bibliography.tex
 Underfull \hbox (badness 1052) in paragraph at lines 35--39
 []\OT1/txr/m/n/10 Andrew Wa-ter-man, Krste Asanovi:  ``The RISC-V In-struc-tion Set Man-ual Vol-ume I: Un-priv-i-leged
  []
 
-) [17] (./sotsuron_nagaike.aux) ) 
+) [18] (./sotsuron_nagaike.aux) ) 
 Here is how much of TeX's memory you used:
- 3568 strings out of 493640
- 45508 string characters out of 6150528
- 106514 words of memory out of 5000000
- 7054 multiletter control sequences out of 15000+600000
+ 3574 strings out of 493640
+ 45647 string characters out of 6150528
+ 106536 words of memory out of 5000000
+ 7058 multiletter control sequences out of 15000+600000
  30641 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,7n,42p,1597b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,7n,42p,1638b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike.dvi (21 pages, 50504 bytes).
+Output written on sotsuron_nagaike.dvi (22 pages, 51560 bytes).
