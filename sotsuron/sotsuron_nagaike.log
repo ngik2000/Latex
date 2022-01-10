@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.4.20)  10 JAN 2022 00:36
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.4.20)  10 JAN 2022 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,7 +402,7 @@ File: image/MIQSInst_class.pdf Graphic file (type pdf)
  <image/MIQSInst_class.pdf> [10]
 File: image/jissou_inst_format.pdf Graphic file (type pdf)
  <image/jissou_inst_format.pdf>
-Overfull \hbox (25.19507pt too wide) in paragraph at lines 30--32
+Overfull \hbox (25.19507pt too wide) in paragraph at lines 31--33
 []\JY1/mc/m/n/10.95 実際に定義した命令フ ォ ーマ ッ トクラスの一覧を図 \OT1/txr/m/n/10.95 4.5 \JY1/mc/m/n/10.95 に示す． \OT1/txr/m/n/10.95 RVIn-stVVMIQS \JY1/mc/m/n/10.95 は \OT1/txr/m/n/10.95 vadd,vsub,vor,vxor,vand
  []
 
@@ -421,25 +421,47 @@ File: image/rv_vectorized_assembly.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 10.59824pt on input line 21.
 
-) (./tex/5_2.tex [14
+[14
 
-] [15]) [16]
+] [15]
+File: image/vsub.pdf Graphic file (type pdf)
+ <image/vsub.pdf>
+File: image/vand.pdf Graphic file (type pdf)
+ <image/vand.pdf>
+File: image/vor.pdf Graphic file (type pdf)
+ <image/vor.pdf>
+File: image/vxor.pdf Graphic file (type pdf)
+ <image/vxor.pdf>
+File: image/vsubi.pdf Graphic file (type pdf)
+ <image/vsubi.pdf>
+File: image/vandi.pdf Graphic file (type pdf)
+ <image/vandi.pdf>
+File: image/vori.pdf Graphic file (type pdf)
+ <image/vori.pdf>
+File: image/vxori.pdf Graphic file (type pdf)
+ <image/vxori.pdf>
+File: image/vsll.pdf Graphic file (type pdf)
+ <image/vsll.pdf>
+File: image/vsra.pdf Graphic file (type pdf)
+ <image/vsra.pdf>
+File: image/vsrl.pdf Graphic file (type pdf)
+ <image/vsrl.pdf>) (./tex/5_2.tex [16] [17] [18]) [19]
 第 6.
-(./tex/outro.tex) [17
+(./tex/outro.tex) [20
 
-] [18] (./tex/bibliography.tex
+] [21] (./tex/bibliography.tex
 Underfull \hbox (badness 1052) in paragraph at lines 35--39
 []\OT1/txr/m/n/10 Andrew Wa-ter-man, Krste Asanovi:  ``The RISC-V In-struc-tion Set Man-ual Vol-ume I: Un-priv-i-leged
  []
 
-) [19] (./sotsuron_nagaike.aux) ) 
+) [22] (./sotsuron_nagaike.aux) ) 
 Here is how much of TeX's memory you used:
- 4422 strings out of 481118
- 56933 string characters out of 5920166
- 297470 words of memory out of 5000000
- 20365 multiletter control sequences out of 15000+600000
+ 4466 strings out of 481118
+ 57447 string characters out of 5920166
+ 297595 words of memory out of 5000000
+ 20398 multiletter control sequences out of 15000+600000
  559339 words of font info for 110 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  30i,6n,46p,1261b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike.dvi (23 pages, 54760 bytes).
+Output written on sotsuron_nagaike.dvi (26 pages, 68320 bytes).

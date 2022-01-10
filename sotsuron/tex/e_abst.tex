@@ -1,1 +1,9 @@
-ENGLISH abst
+With conventional SIMD instructions, changing the number of simultaneous operations requires rewriting the machine code accordingly.
+To solve this problem, RISC-V with vector extensions has been developed for data parallel processing, which is a scalable vector extension that can change the number of simultaneous operations without changing the machine code.
+However, there are no compilers that support this vector extension, so we cannot generate the assembly code of our vector extension. As a solution to this problem, we studied the development of a compiler that supports our vector extensions. By using LLVM, which is a compiler infrastructure, and reusing the functions of already implemented compilers for RISC-V, it is easier to generate assembly code than developing a compiler from scratch. In addition, by using LLVM's automatic vectorization, we can generate vectorized code.
+
+In this paper, we describe the code generation in the LLVM compiler infrastructure, and from the instruction definition method used in the code generation, we defined instructions for generating original instructions. We define the instruction format and the output instruction mnemonic for the original instructions. Then, the original instruction can be generated from the vectorized LLVM intermediate representation, LLVM IR.
+
+In addition, we verify that the implemented instructions are correctly generated from the input source code, write programs such as array addition using the C language, and generate the assembly code of the programs.
+
+In addition, we will discuss the definitions and changes required to generate instructions that have not been implemented at this stage.

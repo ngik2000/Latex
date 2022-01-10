@@ -12,9 +12,9 @@
 \contentsline {chapter}{\numberline {4}ベクトル拡張付きRISC-Vコンパイラ}{9}%
 \contentsline {section}{\numberline {4.1}LLVMバックエンドにおける独自命令実装手法}{9}%
 \contentsline {section}{\numberline {4.2}ベクトル拡張付きRISC-V命令の定義}{10}%
-\contentsline {chapter}{\numberline {5}評価と考察}{14}%
+\contentsline {chapter}{\numberline {5}検証と課題}{14}%
 \contentsline {section}{\numberline {5.1}アセンブリコードの生成検証}{14}%
-\contentsline {section}{\numberline {5.2}未実装命令についての考察}{14}%
-\contentsline {chapter}{\numberline {6}おわりに}{17}%
-\contentsline {chapter}{謝 辞}{18}%
-\contentsline {chapter}{参 考 文 献}{19}%
+\contentsline {section}{\numberline {5.2}課題}{16}%
+\contentsline {chapter}{\numberline {6}おわりに}{20}%
+\contentsline {chapter}{謝 辞}{21}%
+\contentsline {chapter}{参 考 文 献}{22}%
