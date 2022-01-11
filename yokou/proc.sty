@@ -1,0 +1,184 @@
+﻿%
+%  情報処理学会全国大会スタイルファイル
+%                          by bunjin
+%
+%  改め、卒論予稿スタイルファイル
+%    modified by mitsugi 2004
+%
+%  platexで使用可能な予稿スタイルファイルです
+%  もはや全国大会スタイルファイルじゃないです
+%    modified by mitsugi 2005/7/19
+%
+%  last modified 2005/7/29 by mitsugi
+%
+
+\typeout{Document Style `Proc for ASCII TeX'.}
+
+\newcommand{\JTeX}{\leavevmode\lower.5ex\hbox{J}\kern-.18em\TeX}
+\newcommand{\JLaTeX}{\leavevmode\lower.5ex\hbox{\rm J}\kern-.1em\LaTeX}
+
+\@namedef{ds@9pt}{\def\@ptsize{0}}
+
+% platexではエラー出て読めない
+%\input maki2-jarticle.sty
+
+% ページ指定を必ずすること
+\def\mypage#1{
+  \gdef\@mypage{#1}
+}
+
+%%% from maki2-jarticle.sty
+% キャプション関連
+\long\def\@makecaption#1#2{
+  \vskip 0pt
+    \setbox\@tempboxa\hbox{#1: #2}
+  \ifdim \wd\@tempboxa >\hsize \unhbox\@tempboxa\par \else \hbox
+    to\hsize{\hfil\box\@tempboxa\hfil}
+  \fi}
+
+
+% オプションをチェックする
+\def\@ptsize{0}                 % 文字サイズ(デフォルトは10pt)
+\@options
+%\input jart1\@ptsize.sty\relax
+
+\input jtwocolumn.sty           % 二段組
+
+%
+% ページスタイル
+%
+\setlength{\oddsidemargin}{-8.0mm}
+\setlength{\evensidemargin}{-6.5mm}
+\setlength{\topmargin}{-11mm}
+
+\setlength{\textheight}{263mm}  % A4
+\setlength{\textwidth}{178mm} % 横幅
+
+\headheight 0pc			% ヘッダーの高さ
+\headsep 0in			% ヘッダーと本文の間隔
+%\footheight 0pc			% フッタの高さ
+\footskip 1pc			% 本文からページの再下端まで間隔
+\columnsep 10mm			% カラムの間隔
+
+\textfloatsep 7pt
+\floatsep 0pt
+\intextsep 2pt
+
+\def\footnoterule{\kern-3\p@
+  \hrule height 0.3mm width 8.4truecm \kern 2.6\p@}  % the \hrule is .4pt high
+
+%\setlength{\partopsep}{0.1mm}   % 名前と本文の間隔
+\setlength{\topsep}{0 mm}
+\setlength{\itemsep}{0.1mm}
+\setlength{\parsep}{0mm}
+
+%\pagestyle{empty}		% ページを印刷しない
+
+% 
+%   表題-title
+%
+\def\maketitle{\par
+ \setcounter{page}{\@mypage}
+ \begingroup
+ \def\thefootnote{\blsymbol{footnote}}
+ \def\@makefnmark{\hbox 
+ to 0pt{$^{\@thefnmark}$\hss}} 
+ \if@twocolumn 
+ \twocolumn[\@maketitle] 
+ \else \newpage
+ \global\@topnum\z@ \@maketitle \fi
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \gdef\@foottitle{}\gdef\@author{}\gdef\@title{}\let\foottitle\relax}
+
+\def\@maketitle{\newpage
+ \null
+\begin{center}
+  {\Large \bf \gt \@title \par}% \vskip 0.5em
+\end{center}
+ \begin{center}
+  {\large \lineskip .1em
+   \begin{tabular}[t]{c}\@author 
+   \end{tabular}\par} 
+ \end{center}
+ \par
+ \vskip 0.1em
+} 
+
+\long\def\@xfoottitle#1{\insert\footins{\footnotesize
+    \interlinepenalty\interfootnotelinepenalty 
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+    \parindent 0.5em\noindent{\rule{\z@}{\footnotesep}\ignorespaces
+      #1\strut}}}
+
+
+%
+% 章建て-section
+%
+\def\section{\@startsection {section}{1}{\z@}{0.5ex plus 0.2ex minus 
+ .2ex}{1.0ex plus .2ex}{\font@s}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{0.6ex plus 0.1ex minus 
+ .2ex}{0.5ex plus .2ex}{\font@ss}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{0.5ex plus 
+0.2ex minus .2ex}{1.0ex plus .2ex}{\font@sss}}
+\def\paragraph{\@startsection
+ {paragraph}{4}{\z@}{0.5ex plus 0.2ex minus .2ex}{-1em}{\normalsize\bf\gt}}
+\def\subparagraph{\@startsection
+ {subparagraph}{4}{\parindent}{0.5ex plus 0.2ex minus 
+ .2ex}{-1em}{\normalsize\bf\gt}}
+
+\def\sectionfont#1#2#3{\gdef\font@s{#1}\gdef\font@ss{#2}\gdef\font@sss{#3}}
+\sectionfont{\large\gt\bf}{\normalsize\gt\bf}{\normalsize\gt\bf}
+
+\def\thepart{\Roman{part}} 
+\def\thesection {\arabic{section}}
+\def\thesubsection {\thesection.\arabic{subsection}}
+\def\thesubsubsection {\thesubsection.\arabic{subsubsection}}
+\def\theparagraph {\thesubsubsection.\arabic{paragraph}}
+\def\thesubparagraph {\theparagraph.\arabic{subparagraph}}
+
+%
+% 箇条書- enumerate, itemize
+%
+\def\labelitemi{$\bullet$}
+\def\labelitemii{--}
+\def\labelitemiii{$\diamond$}
+\def\labelitemiv{$\ast$}
+
+\def\labelenumi{(\arabic{enumi})}
+\def\theenumi{\arabic{enumi}}
+\def\labelenumii{(\arabic{enumii})}
+\def\theenumii{\arabic{enumii}}
+\def\labelenumiii{\alph{enumiii})}
+\def\theenumiii{\alph{enumiii}}
+\def\labelenumiv{\Roman{enumiv}.}
+\def\theenumiv{\Roman{enumiv}}
+
+\parindent1zw
+
+%
+% 参考文献
+%
+\def\thebibliography#1{\section*{参考文献\markboth
+ {参考文献}{参考文献}}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus -.1em}
+ \fussy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+% 参考文献の引用形式
+\def\@cite#1#2{$^{\mbox{\scriptsize{[#1\if@tempswa , #2\fi]}}}$}
+
+\def\@begintheorem#1#2{\trivlist \item[\hskip \labelsep{\bf\gt [#1\ #2]}]}
+\def\@opargbegintheorem#1#2#3{\trivlist
+      \item[\hskip \labelsep{\bf\gt [#1\ #2\ (#3)]}]}
+
+\newtheorem{example}{例}
+
