@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  19 JAN 2022 17:24
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  22 JAN 2022 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/fss4/ngik2000/Latex/sotsuron_v2/sotsuron_nagaike
-(/home/fss4/ngik2000/Latex/sotsuron_v2/sotsuron_nagaike.tex
+**/home/fss4/ngik2000/Latex/sotsuron_v3/sotsuron_nagaike_v3
+(/home/fss4/ngik2000/Latex/sotsuron_v3/sotsuron_nagaike_v3.tex
 pLaTeX2e <2017/10/28>+4 (based on LaTeX2e <2017-04-15>)
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/platex/base/jbook.cls
@@ -246,8 +246,8 @@ Package: listings 2004/10/17 1.3b (Carsten Heinz)
 Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count117
 \lst@inputfile=\read1
-) (./sotsuron_nagaike.aux)
-\openout1 = `sotsuron_nagaike.aux'.
+) (./sotsuron_nagaike_v3.aux)
+\openout1 = `sotsuron_nagaike_v3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 29.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 29.
@@ -320,9 +320,9 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
- (./sotsuron_nagaike.toc)
+ (./sotsuron_nagaike_v3.toc)
 \tf@toc=\write3
-\openout3 = `sotsuron_nagaike.toc'.
+\openout3 = `sotsuron_nagaike_v3.toc'.
 
  [3]
 第 1.
@@ -405,14 +405,14 @@ File: image/vsrl.pdf Graphic file (type pdf)
 第 6.
 (./tex/outro.tex) [21
 
-] [22] (./tex/bibliography.tex) [23] (./sotsuron_nagaike.aux) ) 
+] [22] (./tex/bibliography.tex) [23] (./sotsuron_nagaike_v3.aux) ) 
 Here is how much of TeX's memory you used:
  3610 strings out of 493640
- 46061 string characters out of 6150528
+ 46094 string characters out of 6150528
  106673 words of memory out of 5000000
  7082 multiletter control sequences out of 15000+600000
  30641 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,7n,42p,1600b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,7n,42p,1603b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike.dvi (27 pages, 70108 bytes).
+Output written on sotsuron_nagaike_v3.dvi (27 pages, 70108 bytes).

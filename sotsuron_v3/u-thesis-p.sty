@@ -1,0 +1,341 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 卒論修論スタイルファイル？（いんちき移植）
+%% (本来はクラスファイルを作るべきか...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{暫定移植 ver. by mitsugi}
+
+\renewcommand{\baselinestretch}{1.23}
+
+
+\renewcommand{\@normalsize}{\@setsize\normalsize{20pt}\xiipt\@xiipt
+\abovedisplayskip 12pt plus3pt minus7pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus3pt\belowdisplayshortskip 6.5pt plus3.5pt
+minus3pt\let\@listi\@listI}
+
+
+
+\def\labelenumi{\arabic{enumi}.} 
+\def\labelenumii{(\alph{enumii})}
+\def\labelenumiii{\roman{enumiii}.}
+\def\labelenumiv{\Alph{enumiv}.}
+
+
+\def\@chapappi{第}
+\def\@chapappii{章}
+
+
+\def\numberline#1{%
+   \setbox\z@\hbox{#1\ }%
+   \ifdim\wd\z@<\@lnumwidth \hbox to\@lnumwidth{\unhbox\z@\hfil}%
+   \else                    \box\z@
+   \fi}
+
+
+\def\tableofcontents{
+ \renewcommand{\thepage}{\roman{page}}
+ \@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+ \fi\chapter*{目 次}
+ \@starttoc{toc}\if@restonecol\twocolumn\fi
+ \thispagestyle{plain}}
+\def\l@part#1#2{\addpenalty{-\@highpenalty}
+ \addvspace{2.25em plus 1pt} \begingroup
+ \@tempdima 3em \parindent \z@ \rightskip \@pnumwidth \parfillskip
+-\@pnumwidth 
+ {\large \bf \leavevmode #1\hfil \hbox to\@pnumwidth{\hss #2}}\par
+ \nobreak \endgroup}
+
+
+
+
+\def\l@chapter#1#2{\pagebreak[3] 
+ \vskip 1.0em plus 1pt \@tempdima 1.5em \begingroup
+ \parindent \z@ \rightskip \@pnumwidth 
+ \parfillskip -\@pnumwidth 
+ \bf \leavevmode #1\hfil \hbox to\@pnumwidth{\hss #2}\par
+ \endgroup}
+\def\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\def\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+\def\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+\def\l@paragraph{\@dottedtocline{4}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
+\def\listoffigures{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+ \fi\chapter*{図 目 次\@mkboth
+ {図 目 次}{図 目 次}}\@starttoc{lof}\if@restonecol
+ \twocolumn\fi
+ \thispagestyle{plain}}
+\def\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
+\def\listoftables{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+ \fi\chapter*{表 目 次\@mkboth
+ {表 目 次}{表 目 次}}\@starttoc{lot}\if@restonecol
+ \twocolumn\fi
+ \thispagestyle{plain}}
+\let\l@table\l@figure
+
+
+
+\def\thebibliography#1{\chapter*{参 考 文 献}\list
+ {［\hspace{-0.1mm}\arabic{enumi}\hspace{-0.5mm}］}
+ {\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+
+
+
+\long\def\@makecaption#1#2{
+ \vskip 10pt 
+ \setbox\@tempboxa\hbox{{\small #1\hspace{3mm} #2}}
+ \ifdim \wd\@tempboxa >\hsize \unhbox\@tempboxa\par \else \hbox
+to\hsize{\hfil\box\@tempboxa\hfil} 
+ \fi}
+
+
+
+
+
+\def\titletwo#1{\gdef\@titletwo{#1}}
+\def\lab#1{\gdef\@lab{#1}}
+\def\labtwo#1{\gdef\@labtwo{#1}}
+\def\teacher#1{\gdef\@teacher{#1}}
+\def\id#1{\gdef\@id{#1}}
+\gdef\@kind{卒業論文}
+\def\kind#1{\gdef\@kind{#1}}
+
+\def\maketitle{\begin{titlepage}
+ \setcounter{page}{0}
+ \let\footnotesize\small \let\footnoterule\relax 
+ \null
+ \vspace*{-1cm}
+ \hspace*{12cm} {\mbox {\Huge \@id}}
+ \vspace{2.5cm}
+ \vfil
+ \vskip 60pt \begin{center}
+ {\Huge \@kind}\\%
+ \vspace*{1.5cm}%
+ {\Huge \@title}\\%
+ \vspace*{4mm}%
+ {\Huge \@titletwo}\\%
+ \vspace*{2cm}%
+ {\LARGE \@date}\par%
+ \vspace*{5mm}%
+ {\LARGE \@author}\par% 
+ \vspace*{1cm}%
+ {\LARGE \@lab}\par%
+ \vspace*{2mm}%
+ {\LARGE \@labtwo}
+ \vfill
+ \end{center} \par
+\vfil
+\null
+\end{titlepage}
+\setcounter{footnote}{0} \let\thanks\relax
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax} 
+
+
+
+
+\def\ps@headings{\let\@mkboth\markboth
+\def\@oddfoot{}
+\def\@evenfoot{}
+\def\@evenhead{\rm \thepage \hfil \sl\leftmark}
+\def\@oddhead{\hbox{}\sl \rightmark \hfil\rm\thepage}
+\def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth
+>\m@ne
+ \@chapapp\ \thechapter. \ \fi ##1}}{}}\def\sectionmark##1{\markright
+{\uppercase{\ifnum \c@secnumdepth >\z@
+ \thesection. \ \fi ##1}}}}
+\def\ps@myheadings{\let\@mkboth\@gobbletwo
+\def\@oddhead{\hbox{}\sl\rightmark \hfil
+\rm\thepage}\def\@oddfoot{}\def\@evenhead{\rm \thepage\hfil\sl\leftmark\hbox
+{}}\def\@evenfoot{}\def\sectionmark##1{}\def\subsectionmark##1{}}
+
+
+
+
+\newif\if西暦\let\if西暦=\iffalse \def\西暦{\let\if西暦=\iftrue}
+\def\today{{\if西暦\count0=\year\else
+\count0=\year\advance\count0 -1988 平成\,\fi
+\number\count0\,年\hspace{.5em}\nobreak
+\number\month\,月\hspace{.5em}\nobreak\number\day\,日}}
+\@addtoreset{equation}{chapter} 
+\def\theequation{\thechapter.\arabic{equation}}
+
+
+
+
+
+%%%% others %%%%
+
+\def\chapter{\newpage \thispagestyle{plain} \global\@topnum\z@
+ \@afterindenttrue \secdef\@chapter\@schapter}
+
+\def\chaptername#1{\gdef\@chaptername{#1}}
+
+\newcounter{chapteri}
+
+\def\@chapter[#1]#2{
+ \chaptername{#2}
+ \thispagestyle{plain}
+ \pagestyle{newheadings}
+ \ifnum 1 > \value{chapteri}
+ \renewcommand{\thepage}{\arabic{page}} \setcounter{page}{1}\fi
+ \ifnum \c@secnumdepth >\m@ne
+ \refstepcounter{chapter}
+ \refstepcounter{chapteri}
+ \typeout{\@chapapp\space\thechapter.}
+ \addcontentsline{toc}{chapter}{\protect
+ \numberline{\thechapter}#1} \else
+ \addcontentsline{toc}{chapter}{#1}\fi
+ \chaptermark{#1}
+ \addtocontents{lof}{\protect\addvspace{10pt}}
+\addtocontents{lot}{\protect\addvspace{10pt}} \if@twocolumn
+\@topnewpage[\@makechapterhead{#2}] 
+ \else \@makechapterhead{#2}
+ \@afterheading \fi
+ \thispagestyle{plain}
+ } 
+
+\def\@schapter#1{
+ \@mkboth{#1}{#1}
+ \addcontentsline{toc}{chapter}{#1}
+ \if@twocolumn \@topnewpage[\@makeschapterhead{#1}]
+        \else \@makeschapterhead{#1} 
+              \@afterheading\fi}
+
+\def\@makechapterhead#1{%
+  \clearpage\vspace*{1cm}{% 
+    \parindent 0pt \raggedright% 
+    \ifnum%
+    \c@secnumdepth >\m@ne {\huge\bf \@chapappi\thechapter\@chapappii}%
+    \hspace{1.5cm}%
+    \fi%
+    {\huge\bf #1}\par%
+\nobreak}\vspace{2cm}}
+
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\etitletwo#1{\gdef\@etitletwo{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+
+\def\abstract{
+\renewcommand{\thepage}{\roman{page}}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Abstract}
+\normalsize
+\center{{\Large \@etitle}\\%
+  \vspace*{-2mm}%
+  {\Large \@etitletwo\par}
+\vspace{0.7cm}
+{\large \lineskip .75em
+\begin{tabular}[t]{c}\@eauthor
+\end{tabular}\par} }
+\vspace{0.7cm}
+\begin{center}
+{\large \bf Abstract\vspace{-.5em}\vspace{0pt}} 
+\end{center}
+\quotation 
+}
+
+\def\endabstract{\if@twocolumn\else\endquotation\fi
+ \thispagestyle{plain} 
+\newpage}
+
+\def\jabstract{
+\renewcommand{\thepage}{\roman{page}}
+\newpage
+\addcontentsline{toc}{chapter}{内 容 梗 概}
+\begin{center}
+{\normalsize\bf 内容梗概\vspace{5mm}} 
+\end{center}
+\begin{minipage}{1.0\textwidth}
+\renewcommand{\baselinestretch}{1.2}
+\small
+\quotation 
+}
+\def\endjabstract{\if@twocolumn\else\endquotation\fi 
+ \end{minipage}
+ \thispagestyle{plain} 
+\newpage}
+
+
+\def\acknowledgement{\chapter*{謝 辞}}
+
+\def\endacknowledgement{\if@twocolumn\else\endquotation\fi}
+
+
+\topmargin -1cm
+\textwidth 16.3cm
+\textheight 22cm
+\oddsidemargin 0.3cm
+\evensidemargin 0.3cm
+\headheight 1cm
+%%%\footheight 1cm
+\headsep 1cm
+\footskip 2cm
+
+%\topmargin -1cm
+%\textwidth 13.5cm
+%\textheight 22cm
+%\oddsidemargin 1.3cm
+%\evensidemargin 0.3cm
+%\headheight 1cm
+%%%\footheight 1cm
+%\headsep 1cm
+%\footskip 2cm
+
+
+
+%% newheadings %%
+
+\def\ps@newheadings{\let\@mkboth\markboth
+ \def\@oddfoot{\hfil \rm \thepage \hfil}
+ \def\@evenfoot{\hfil \rm \thepage \hfil}
+ \def\@evenhead{\hfil \rm \leftmark}
+ \def\@oddhead{\hfil \rm \rightmark}
+ \def\chaptermark##1{\markboth 
+  {\uppercase{\ifnum \c@secnumdepth >\m@ne
+    \@chapappi\thechapter\@chapappii \ \fi ##1}}
+  {\uppercase{\ifnum \c@secnumdepth >\m@ne
+   \@chapappi\thechapter\@chapappii \ \fi ##1}}}}
+
+\ps@newheadings \pagenumbering{arabic} \onecolumn 
+
+
+\def\ncite{\@ifnextchar [{\@tempswatrue\@ncitex}{\@tempswafalse\@ncitex[]}}
+\def\@ncitex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@ncite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{,\penalty\@m\ }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+\hbox{\csname b@\@citeb\endcsname}}}{#1}}
+\def\@ncite#1#2
+ {\raisebox{1.5mm}{\tiny{［{#1\if@tempswa , #2\fi}］}}}
+\renewcommand{\@cite}[2]{[{#1\if@tempswa , #2\fi}]}
+
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\gdef\@subtitle{}
+
+\def\spine#1{\gdef\@spine{\baselineskip 3.6mm #1}}
+\gdef\@spine{}
+
+\def\makespine{
+ \newpage \pagestyle{empty} 
+ \begin{minipage}{3mm}
+  \begin{center}
+ \@spine
+ \end{center}
+ \end{minipage}}
+
+
+\renewcommand{\appendix}{\par
+ \setcounter{chapter}{0}
+ \setcounter{section}{0}
+ \def\@chapapp{Appendix}
+ \def\@chapappi{付録}
+ \def\@chapappii{}
+ \def\thechapter{\Alph{chapter}}}
+
