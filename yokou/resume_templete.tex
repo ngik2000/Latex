@@ -27,29 +27,28 @@
 そのため，LLVMで提供されている各種モジュールを利用することで、独自機能部分の実装に集中することができる．
 また，LLVMには自動ベクトル化機能が備わっており，入力ソースコードの繰り返し処理をベクトル化されたLLVM IRに変換する．ベクトル化されたLLVM IRでは，処理対象の全データへ演算を行うためにベクトル演算を繰り返した後に余剰分のデータを逐次処理によって演算を行う．
 そのLLVM IRからパターンマッチングにより各ターゲットへのベクトル命令への変換などが行われる．
-%RISC-VのV拡張用のパターンマッチングについても実装済みのものを再利用する．
 ベクトル拡張付きRISC-VはRISC-Vを拡張しているため，LLVMのRISC-Vコンパイラとしての機能を再利用してコンパイラの開発を行う．
 
 なお，使用するLLVMのバージョンは13.0.0である．
 
 LLVMはソースコードから中間表現であるLLVM IRに変換を行うフロントエンド，LLVM IRからアセンブリコード生成を行うバックエンドからなる．本研究では独自命令生成のためにバックエンドに対して変更を加える．
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[scale=0.35]{backend_mojideka_2.eps}
-    \vspace{-3truemm}
-    \caption{コード生成の流れ}
-    \vspace{-4truemm}
-    \label{fig:backend}
-\end{figure}
+%\begin{figure}[t]
+%    \centering
+%    \includegraphics[scale=0.35]{backend_mojideka_2.eps}
+%    \caption{コード生成の流れ}
+%    \label{fig:backend}
+%\end{figure}
 
-バックエンドにおけるコード生成について，処理の流れとパスを図1に示す．パスとはLLVMにおけるLLVM IR等のコードに対して最適化や変換を行うものである．
-SelectionDAGフェーズではSelectionDAGISelパスによってLLVM IRをDAG(Directed Acyclic Graph)形式へと変換し，DAGのパターンマッチングによるノードの置き換えによる単純化，共通部分削除などの最適化，ターゲット命令への変換の順に行いMachineCode形式を出力する．SelectoinDAGは一つのノードが一つのLLVM IR命令に対応し，命令やデータの依存関係を表すグラフである．
-MachineCode形式はターゲットが使用する実際の命令を持った形式でSSA(Static Single Assignment)形式である．SSA形式では各変数が一度のみ代入される．MachineCodeでは命令のオペランドを仮想レジスタを用いてSSA形式で表現している．MachineCodeはMachinefunctionPassによってSSAベースの最適化を行い，命令への物理レジスタの割当を行う．レジスタの割当を行った後は仮想レジスタによるSSA形式ではなく，オペランドに実際のレジスタを用いた形式となっている．
+%バックエンドにおけるコード生成について，処理の流れとパスを図1に示す．パスとはLLVMにおけるLLVM IR等のコードに対して最適化や変換を行うものである．
+%SelectionDAGフェーズではSelectionDAGISelパスによってLLVM IRをDAG (Directed Acyclic Graph)形式へと変換し，DAGのパターンマッチングによるノードの置き換えによる単純化，共通部分削除などの最適化，ターゲット命令への変換の順に行いMachineCode形式を出力する．SelectoinDAGは一つのノードが一つのLLVM IR命令に対応し，命令やデータの依存関係を表すグラフである．
+%MachineCode形式はターゲットが使用する実際の命令を持った形式でSSA (Static Single Assignment)形式である．SSA形式では各変数が一度のみ代入される．MachineCodeでは命令のオペランドを仮想レジスタを用いてSSA形式で表現している．MachineCodeはMachinefunctionPassによってSSAベースの最適化を行い，命令への物理レジスタの割当を行う．レジスタの割当を行った後は仮想レジスタによるSSA形式ではなく，オペランドに実際のレジスタを用いた形式となっている．
 
-MC Layer形式はアセンブリコードに近い形式で，命令とオペランドの情報を持つ．AsmPrinterパスでアセンブリコード，オブジェクトコードを出力する際の中間表現として用いられる．
+%MC Layer形式はアセンブリコードに近い形式で，命令とオペランドの情報を持つ．AsmPrinterパスでアセンブリコード，オブジェクトコードを出力する際の中間表現として用いられる．
 
-以上のLLVMバックエンドでの処理はレジスタ情報，命令フォーマットや命令のニーモニック等の情報に従って行われ，その情報はLLVMにおけるターゲットマシン情報記述のためのドメイン固有言語であるTableGenを用いて記述する．
+%以上のLLVMバックエンドでの処理はレジスタ情報，命令フォーマットや命令のニーモニック等の情報に従って行われ，その情報はLLVMにおけるターゲットマシン情報記述のためのドメイン固有言語であるTableGenを用いて記述する．
+
+LLVMのバックエンドではLLVMにおけるターゲットマシン情報記述のためのドメイン固有言語であるTableGenを用いて記述される，レジスタ情報，命令フォーマットや命令のニーモニック等の定義に従ってLLVM IRからアセンブリコードへの変換を行っている．
 
 %LLVMではRISC-VのV拡張用にTableGenによるベクトルレジスタ，ベクトル命令の定義が既に存在している．本研究ではベクトルレジスタはそのまま使用し，ベクトル命令については既存の定義に従った形式でベクトル拡張付きRISC-V命令の定義を行う．
 
@@ -59,33 +58,27 @@ MC Layer形式はアセンブリコードに近い形式で，命令とオペラ
 \begin{figure}[t]
     \centering
     \includegraphics[scale=0.35]{RVInstVVMIQS.eps}
-    \vspace{-1truemm}
     \caption{命令フォーマットの定義}
-    \vspace{-2truemm}
     \label{fig:Instruciton_format}
 \end{figure}
 
-ベクトル拡張付きRISC-V命令の定義のために，図2のようなクラスを定義する．クラスRVInstVVMIQSはベクトル要素同士を演算する命令であるベクトル加算等の命令用のフォーマットとして定義する．各命令フォーマットは32bitの命令フィールドを定義している基本クラスRVInstを継承する形で命令によって異なるフォーマットを定義する．
+ベクトル拡張付きRISC-V命令の定義のために，図1のようなクラスを定義する．クラスRVInstVVMIQSはベクトル要素同士を演算する命令であるベクトル加算等の命令用のフォーマットとして定義する．各命令フォーマットは32bitの命令フィールドを定義している基本クラスRVInstを継承する形で命令によって異なるフォーマットを定義する．
 
 \begin{figure}[t]
     \centering
     \includegraphics[scale=0.35]{Instruction.eps}
-    \vspace{-7truemm}
     \caption{命令の定義}
-    \vspace{-4truemm}
     \label{fig:Instruciton}
 \end{figure}
 
-命令の定義は命令フォーマットのクラスを継承し，エンコードの値やニーモニックを指定して行う．命令の定義を図3に示す．図3のVALUVVMIQSクラスは命令定義の際に同じ定義の繰り返しを防ぐために定義する．同様の入出力レジスタを持つ命令はこのクラスをインスタンス化する際に命令の文字列と命令選択に用いるための12-14ビットの値の指定を行う．
+命令の定義は命令フォーマットのクラスを継承し，エンコードの値やニーモニックを指定して行う．命令の定義を図2に示す．図2のVALUVVMIQSクラスは命令定義の際に同じ定義の繰り返しを防ぐために定義する．同様の入出力レジスタを持つ命令はこのクラスをインスタンス化する際に命令の文字列と命令選択に用いるための12-14ビットの値の指定を行う．
 
-配列加算のプログラムからアセンブリコードを生成した結果の一部を図4に示す．vadd.wが我々のベクトル拡張命令のベクトル加算命令である．しかし，ロード・ストア命令についてはRISC-VのV拡張の命令のままである．
+配列加算のプログラムからアセンブリコードを生成した結果の一部を図3に示す．vadd.wが我々のベクトル拡張命令のベクトル加算命令である．しかし，ロード・ストア命令についてはRISC-VのV拡張の命令のままである．
 
 \begin{figure}[tb]
     \centering
     \includegraphics[scale=0.4]{miqs_assembly.eps}
-    \vspace{-2truemm}
     \caption{生成されたアセンブリコード}
-    \vspace{-4truemm}
     \label{fig:assembly}
 \end{figure}
 
