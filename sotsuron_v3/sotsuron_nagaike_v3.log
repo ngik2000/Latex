@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  31 JAN 2022 12:43
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  1 FEB 2022 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,15 +337,20 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
  (./tex/2_1.tex
 File: image/Inst_Format.pdf Graphic file (type pdf)
- <image/Inst_Format.pdf>) (./tex/2_2.tex [3
+ <image/Inst_Format.pdf>) [3
 
-]
+] (./tex/2_2.tex
 File: image/MIQS_system.pdf Graphic file (type pdf)
- <image/MIQS_system.pdf>) (./tex/2_3.tex [4]
+ <image/MIQS_system.pdf>
+Overfull \hbox (543.07767pt too wide) in paragraph at lines 8--9
+ [] 
+ []
+
+) (./tex/2_3.tex [4]
 File: image/predicate.pdf Graphic file (type pdf)
- <image/predicate.pdf> [5]) [6]
+ <image/predicate.pdf>) [5]
 第 3.
-(./tex/3.tex) (./tex/3_1.tex
+[6] (./tex/3.tex) (./tex/3_1.tex
 File: image/LLVM.pdf Graphic file (type pdf)
  <image/LLVM.pdf> [7
 
@@ -413,6 +418,6 @@ Here is how much of TeX's memory you used:
  7081 multiletter control sequences out of 15000+600000
  30641 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,7n,42p,1603b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,7n,42p,1603b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike_v3.dvi (28 pages, 74228 bytes).
+Output written on sotsuron_nagaike_v3.dvi (28 pages, 72768 bytes).

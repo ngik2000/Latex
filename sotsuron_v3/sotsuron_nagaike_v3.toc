@@ -5,7 +5,7 @@
 \contentsline {chapter}{\numberline {2}ベクトル拡張付きRISC-Vプロセッサ}{3}
 \contentsline {section}{\numberline {2.1}RISC-V}{3}
 \contentsline {section}{\numberline {2.2}ベクトル拡張付きRISC-Vプロセッサ概要}{4}
-\contentsline {section}{\numberline {2.3}ベクトル拡張付きRISC-V命令セット}{5}
+\contentsline {section}{\numberline {2.3}ベクトル拡張付きRISC-V命令セット}{4}
 \contentsline {chapter}{\numberline {3}LLVM}{7}
 \contentsline {section}{\numberline {3.1}LLVM概要}{7}
 \contentsline {section}{\numberline {3.2}LLVMによる自動ベクトル化機能}{9}
