@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  8 FEB 2022 14:00
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.5.14)  14 FEB 2022 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -341,45 +341,49 @@ File: image/Inst_Format.pdf Graphic file (type pdf)
 
 ] (./tex/2_2.tex
 File: image/MIQS_system.pdf Graphic file (type pdf)
- <image/MIQS_system.pdf>) (./tex/2_3.tex [4]
+ <image/MIQS_system.pdf>) [4] (./tex/2_3.tex
+File: image/SIMD_example.pdf Graphic file (type pdf)
+ <image/SIMD_example.pdf> [5]
 File: image/predicate.pdf Graphic file (type pdf)
- <image/predicate.pdf> [5]) [6]
+ <image/predicate.pdf> [6]
+File: image/Inst_map.pdf Graphic file (type pdf)
+ <image/Inst_map.pdf>) [7]
 第 3.
 (./tex/3.tex) (./tex/3_1.tex
 File: image/LLVM.pdf Graphic file (type pdf)
- <image/LLVM.pdf> [7
+ <image/LLVM.pdf> [8
 
 ]
 File: image/backend.pdf Graphic file (type pdf)
- <image/backend.pdf> [8]) (./tex/3_2.tex
+ <image/backend.pdf> [9]) (./tex/3_2.tex
 File: image/Auto_vectorize.pdf Graphic file (type pdf)
- <image/Auto_vectorize.pdf>) [9]
+ <image/Auto_vectorize.pdf>) [10]
 第 4.
 (./tex/4.tex) (./tex/4_1.tex
 File: image/SelectionDAG_example.pdf Graphic file (type pdf)
- <image/SelectionDAG_example.pdf> [10
+ <image/SelectionDAG_example.pdf> [11
 
 ]
 File: image/InstFormat_class.pdf Graphic file (type pdf)
  <image/InstFormat_class.pdf>) (./tex/4_2.tex
 File: image/MIQSInst_class.pdf Graphic file (type pdf)
- <image/MIQSInst_class.pdf> [11]
+ <image/MIQSInst_class.pdf> [12]
 File: image/jissou_inst_format.pdf Graphic file (type pdf)
  <image/jissou_inst_format.pdf>
 File: image/jissou_inst_format_class.pdf Graphic file (type pdf)
  <image/jissou_inst_format_class.pdf>
 File: image/RVInstVVMIQS_v2.pdf Graphic file (type pdf)
- <image/RVInstVVMIQS_v2.pdf> [12]
+ <image/RVInstVVMIQS_v2.pdf> [13]
 File: image/Instruction_define.pdf Graphic file (type pdf)
- <image/Instruction_define.pdf>) [13] [14]
+ <image/Instruction_define.pdf>) [14] [15]
 第 5.
 (./tex/5.tex) (./tex/5_1.tex
 File: image/add_array_c.pdf Graphic file (type pdf)
  <image/add_array_c.pdf>
 File: image/rv_vectorized_assembly.pdf Graphic file (type pdf)
- <image/rv_vectorized_assembly.pdf> [15
+ <image/rv_vectorized_assembly.pdf> [16
 
-] [16]
+] [17]
 File: image/vsub.pdf Graphic file (type pdf)
  <image/vsub.pdf>
 File: image/vand.pdf Graphic file (type pdf)
@@ -401,18 +405,18 @@ File: image/vsll.pdf Graphic file (type pdf)
 File: image/vsra.pdf Graphic file (type pdf)
  <image/vsra.pdf>
 File: image/vsrl.pdf Graphic file (type pdf)
- <image/vsrl.pdf>) (./tex/5_2.tex [17] [18] [19]) [20]
+ <image/vsrl.pdf>) (./tex/5_2.tex [18] [19] [20]) [21]
 第 6.
-(./tex/outro.tex) [21
+(./tex/outro.tex) [22
 
-] [22] (./tex/bibliography.tex) [23] (./sotsuron_nagaike_v3.aux) ) 
+] [23] (./tex/bibliography.tex) [24] (./sotsuron_nagaike_v3.aux) ) 
 Here is how much of TeX's memory you used:
- 3609 strings out of 493640
- 46087 string characters out of 6150528
- 109682 words of memory out of 5000000
- 7081 multiletter control sequences out of 15000+600000
+ 3615 strings out of 493640
+ 46182 string characters out of 6150528
+ 110704 words of memory out of 5000000
+ 7085 multiletter control sequences out of 15000+600000
  30641 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,7n,42p,1603b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,7n,42p,1603b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron_nagaike_v3.dvi (28 pages, 72952 bytes).
+Output written on sotsuron_nagaike_v3.dvi (29 pages, 78284 bytes).

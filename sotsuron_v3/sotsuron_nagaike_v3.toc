@@ -4,17 +4,17 @@
 \contentsline {chapter}{\numberline {1}はじめに}{1}
 \contentsline {chapter}{\numberline {2}ベクトル拡張付きRISC-Vプロセッサ}{3}
 \contentsline {section}{\numberline {2.1}RISC-V}{3}
-\contentsline {section}{\numberline {2.2}ベクトル拡張付きRISC-Vプロセッサ概要}{4}
+\contentsline {section}{\numberline {2.2}ベクトル拡張付きRISC-Vプロセッサ構成}{4}
 \contentsline {section}{\numberline {2.3}ベクトル拡張付きRISC-V命令セット}{5}
-\contentsline {chapter}{\numberline {3}LLVM}{7}
-\contentsline {section}{\numberline {3.1}LLVM概要}{7}
-\contentsline {section}{\numberline {3.2}LLVMによる自動ベクトル化機能}{9}
-\contentsline {chapter}{\numberline {4}ベクトル拡張付きRISC-Vコンパイラ}{10}
-\contentsline {section}{\numberline {4.1}LLVMバックエンドにおける独自命令実装手法}{10}
-\contentsline {section}{\numberline {4.2}ベクトル拡張付きRISC-V命令の定義}{11}
-\contentsline {chapter}{\numberline {5}検証と課題}{15}
-\contentsline {section}{\numberline {5.1}アセンブリコードの生成検証}{15}
-\contentsline {section}{\numberline {5.2}課題}{17}
-\contentsline {chapter}{\numberline {6}おわりに}{21}
-\contentsline {chapter}{謝 辞}{22}
-\contentsline {chapter}{参 考 文 献}{23}
+\contentsline {chapter}{\numberline {3}LLVM}{8}
+\contentsline {section}{\numberline {3.1}LLVM概要}{8}
+\contentsline {section}{\numberline {3.2}LLVMによる自動ベクトル化機能}{10}
+\contentsline {chapter}{\numberline {4}ベクトル拡張付きRISC-Vコンパイラ}{11}
+\contentsline {section}{\numberline {4.1}LLVMバックエンドにおける独自命令実装手法}{11}
+\contentsline {section}{\numberline {4.2}ベクトル拡張付きRISC-V命令の定義}{12}
+\contentsline {chapter}{\numberline {5}検証と課題}{16}
+\contentsline {section}{\numberline {5.1}アセンブリコードの生成検証}{16}
+\contentsline {section}{\numberline {5.2}課題}{18}
+\contentsline {chapter}{\numberline {6}おわりに}{22}
+\contentsline {chapter}{謝 辞}{23}
+\contentsline {chapter}{参 考 文 献}{24}
